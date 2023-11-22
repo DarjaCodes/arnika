@@ -6,6 +6,12 @@
   --text: #1f2403;
 }
 
+:root[data-theme='dark'] {
+  --background-primary: #132221;
+  --background-secondary: #476462;
+  --text: #e1e1e1;
+}
+
 /* ZÁKLADNÍ STYLY */
 
 *,
@@ -184,8 +190,71 @@ span {
 }
 
 /* SEM ZAČNĚTE PSÁT SVÉ STYLY PRO MOBIL */
+body {
+  color: var(--text);
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.navlink {
+  color: var(--text);
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.logo {
+  font-family: 'Dawning of a New Day', cursive;
+}
+
+.pitch {
+  font-family: 'Lora', serif;
+  text-align: center;
+
+}
+
+.page-header,
+.pitch,
+.pricelist,
+.footer {
+  background-color: var(--background-secondary);
+}
+
+.subheading,
+.review {
+  background-color: var(--background-primary);
+}
+
+.intro-image {
+  background-image: url('/images/arnica-intro.jpg');
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheading-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.offer {
+  width: 80%;
+  max-width: 270px;
+}
+
+
+.review__content {
+  border: solid 2px var(--background-secondary);
+  font-style: oblique;
+}
 
 @media (min-width: 840px) {
+
   /* HLAVIČKA - NAVIGACE */
   .page-header {
     padding: 2rem 4rem;
@@ -221,4 +290,46 @@ span {
   }
 
   /* TADY PIŠTE STYLY PRO ŠÍŘKU NAD 800PX */
+  .pricelist__content {
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+  }
+
+  .offer {
+    width: 220px;
+
+  }
+
+  .review__content {
+    align-items: center;
+  }
+
+  .review__text {
+    border: none;
+    background-color: var(--background-secondary);
+    width: 250px;
+    position: relative;
+    right: 197px;
+    z-index: 1;
+  }
+
+  .review__photo {
+    background-image: url('./images/reviewer.jpg');
+    width: 300px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+  }
+
+
+}
+
+@media (min-width: 1200px) {
+  .pricelist__content {
+    gap: 6em;
+  }
 }
